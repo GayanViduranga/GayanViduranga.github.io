@@ -1,0 +1,17 @@
+title: "Hettige Don Gayan Viduranga"
+email: "hdgviduranga@gmail.com"
+description: "Data Solutions Architect, Business Analyst, and creator of Data Sparkles."
+baseurl: ""
+url: "https://GayanViduranga.github.io"
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
