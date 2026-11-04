@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Projects & Demos"
+title: "portfolio"
 permalink: /projects/
 ---
 

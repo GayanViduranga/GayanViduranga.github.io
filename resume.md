@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Resume & Stack"
+title: "Resume"
 permalink: /resume/
 ---
 
