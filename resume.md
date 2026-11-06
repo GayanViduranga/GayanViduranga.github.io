@@ -4,22 +4,31 @@ title: "Resume"
 permalink: /resume/
 ---
 
-## Technical Competencies
+<div class="container">
+<section>
+  <h2 class="section">Technical Competencies</h2>
+  <div class="grid">
+    <div class="card"><h3>Business Intelligence &amp; Analytics</h3>
+      <ul>
+        <li><strong>Power BI &amp; DAX:</strong> end-to-end data modeling, star schema, complex DAX, Row-Level Security.</li>
+        <li><strong>Microsoft Fabric:</strong> lakehouse architectures, Direct Lake reporting, enterprise semantic models.</li>
+        <li><strong>SQL &amp; Cloud:</strong> BigQuery, GCP, PostgreSQL, query optimization.</li>
+      </ul></div>
+    <div class="card"><h3>Data Engineering &amp; AI</h3>
+      <ul>
+        <li><strong>Python:</strong> Pandas, NumPy, automated ETL, API integrations.</li>
+        <li><strong>AI pipelines:</strong> MCP integrations, prompt engineering, RAG applications.</li>
+        <li><strong>Automation:</strong> Google Apps Script, Workspace Studio, GitHub Actions.</li>
+      </ul></div>
+  </div>
+</section>
 
-### Business Intelligence & Analytics
-* **Power BI & DAX:** End-to-end data modeling, Star Schema, Complex DAX calculations, Row-Level Security (RLS).
-* **Microsoft Fabric:** Lakehouse architectures, Direct Lake reporting, Enterprise Semantic Models.
-* **SQL & Cloud Data:** BigQuery, Google Cloud Platform (GCP), PostgreSQL, Advanced Query Optimization.
-
-### Data Engineering & AI Solutions
-* **Python Engine:** Data manipulation (Pandas, NumPy), Automated ETL pipelines, API integrations.
-* **AI Pipelines & MCP:** Model Context Protocol (MCP) integrations, Prompt Engineering, RAG applications.
-* **Automation:** Google Apps Script, Workspace Studio workflows, GitHub actions.
-
----
-
-## Education & Qualifications
-
-* **OTHM Level 7 Diploma in Data Science**
-* **Master of Science (MSc)**
-* **Bachelor of Science (BSc) in Business Administration**
+<section>
+  <h2 class="section">Education &amp; Qualifications</h2>
+  <div class="timeline">
+    <div class="item"><strong>OTHM Level 7 Diploma in Data Science</strong></div>
+    <div class="item"><strong>Master of Science (MSc)</strong></div>
+    <div class="item"><strong>Bachelor of Science (BSc) in Business Administration</strong></div>
+  </div>
+</section>
+</div>

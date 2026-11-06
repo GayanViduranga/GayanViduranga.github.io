@@ -1,0 +1,366 @@
+/* ==========================================================
+   1. THEME COLOURS
+   Change colours here and the whole site updates.
+   ========================================================== */
+
+/* Dark theme (default) */
+:root {
+  --bg:        #0b1020;               /* page background */
+  --card:      #141b34;               /* cards and boxes */
+  --text:      #e6e9f5;               /* main text */
+  --muted:     #9aa4c7;               /* secondary text */
+  --accent:    #6366f1;               /* main accent (indigo) */
+  --accent2:   #22d3ee;               /* second accent (cyan) */
+  --border:    #232c52;               /* lines and borders */
+  --nav-bg:    rgba(11, 16, 32, 0.8); /* top bar background */
+  --tag-bg:    rgba(99, 102, 241, 0.15);
+  --tag-text:  #c7c9ff;
+  --link:      #22d3ee;
+}
+
+/* Light theme (applied when the toggle sets data-theme="light") */
+[data-theme="light"] {
+  --bg:        #f6f8fc;
+  --card:      #ffffff;
+  --text:      #1b2240;
+  --muted:     #5b6586;
+  --accent:    #4f46e5;
+  --accent2:   #0891b2;
+  --border:    #e2e6f0;
+  --nav-bg:    rgba(246, 248, 252, 0.85);
+  --tag-bg:    rgba(79, 70, 229, 0.1);
+  --tag-text:  #3730a3;
+  --link:      #0e7490;
+}
+
+
+/* ==========================================================
+   2. BASE STYLES
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* ==========================================================
+   3. NAVIGATION BAR
+   ========================================================== */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.nav nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav .brand {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.nav a.link {
+  margin-left: 22px;
+  color: var(--muted);
+}
+
+.nav a.link:hover,
+.nav a.active {
+  color: var(--text);
+  text-decoration: none;
+}
+
+
+/* ==========================================================
+   4. THEME TOGGLE BUTTON
+   ========================================================== */
+
+.theme-toggle {
+  margin-left: 22px;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: 0.25s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: rotate(15deg);
+}
+
+
+/* ==========================================================
+   5. HERO SECTION (top of the Overview page)
+   ========================================================== */
+
+.hero {
+  padding: 80px 0 50px;
+  background:
+    radial-gradient(600px 300px at 80% 0, rgba(99, 102, 241, 0.25), transparent),
+    radial-gradient(500px 300px at 10% 20%, rgba(34, 211, 238, 0.15), transparent);
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
+
+.hero .role {
+  margin: 6px 0 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p.lead {
+  max-width: 560px;
+  color: var(--muted);
+}
+
+/* Profile picture with a gradient ring */
+.avatar {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  object-position: 50% 0%;   /* shows the top of the photo, so you appear lower in the circle */
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(135deg, var(--accent), var(--accent2)) border-box;
+}
+
+
+/* ==========================================================
+   6. BUTTONS
+   ========================================================== */
+
+.btn {
+  display: inline-block;
+  margin: 6px 10px 0 0;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.btn.primary {
+  color: #0b1020;
+  border: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
+
+/* ==========================================================
+   7. SECTIONS AND HEADINGS
+   ========================================================== */
+
+section {
+  padding: 50px 0;
+}
+
+h2.section {
+  margin: 0 0 24px;
+  font-size: 1.6rem;
+}
+
+/* Small gradient bar under each section title */
+h2.section::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+
+/* ==========================================================
+   8. CARDS AND TAGS
+   ========================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.tags span {
+  display: inline-block;
+  margin: 4px 6px 0 0;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  color: var(--tag-text);
+  background: var(--tag-bg);
+  border-radius: 999px;
+}
+
+
+/* ==========================================================
+   9. STAT BOXES
+   ========================================================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.stat {
+  padding: 16px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.stat b {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--accent2);
+}
+
+
+/* ==========================================================
+   10. TIMELINE (Resume page)
+   ========================================================== */
+
+.timeline {
+  padding-left: 24px;
+  border-left: 2px solid var(--border);
+}
+
+.timeline .item {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+/* Dot on the timeline line */
+.timeline .item::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+
+/* ==========================================================
+   11. FOOTER
+   ========================================================== */
+
+footer {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+
+/* ==========================================================
+   12. MOBILE (screens narrower than 600px)
+   ========================================================== */
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .nav a.link {
+    margin-left: 12px;
+  }
+
+  .theme-toggle {
+    margin-left: 12px;
+  }
+}
