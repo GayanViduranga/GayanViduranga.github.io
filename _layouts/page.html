@@ -21,7 +21,8 @@
       <nav>
         <a class="link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Overview</a>
         <a class="link {% if page.url == '/resume/' %}active{% endif %}" href="{{ '/resume/' | relative_url }}">Resume</a>
-        <a class="link" href="https://medium.com" target="_blank">Blog</a>
+        <a class="link {% if page.url == '/projects/' %}active{% endif %}" href="{{ '/projects/' | relative_url }}">Portfolio</a>
+        <a class="link" href="https://medium.com/@hdgviduranga" target="_blank">Blog</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">🌙</button>
       </nav>
     </div>

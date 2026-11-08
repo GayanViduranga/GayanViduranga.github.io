@@ -1,40 +1,47 @@
 ---
 layout: page
-title: "portfolio"
+title: "Portfolio"
 permalink: /projects/
 ---
 
-This portfolio showcases production-grade analytics dashboards, interactive visual components, and data solutions.
+<div class="container">
 
-## Enterprise Operational Analytics (Power BI)
+<section>
+  <h2 class="section">Portfolio</h2>
+  <p class="muted">Production-grade analytics dashboards, interactive visual components, and data solutions.</p>
+</section>
 
-Below is a responsive container embedding an interactive Power BI report.
+<section>
+  <h2 class="section">Enterprise Operational Analytics</h2>
+  <div class="card">
+    <div class="tags"><span>Power BI</span><span>DAX</span><span>Star Schema</span></div>
+    <p class="muted">An interactive Power BI report embedded below. Use the full-screen option for a closer look.</p>
+    <div class="embed-container">
+      <iframe title="Operational Reporting Dashboard"
+              src="https://app.powerbi.com/view?r=YOUR_SAMPLE_REPORT_EMBED_URL"
+              allowFullScreen="true"></iframe>
+    </div>
+  </div>
+</section>
 
-<div class="embed-container">
-  <iframe title="Operational Reporting Dashboard" src="https://app.powerbi.com/view?r=YOUR_SAMPLE_REPORT_EMBED_URL" allowFullScreen="true"></iframe>
-</div>
+<section>
+  <h2 class="section">Interactive Tools</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>💰 LKR Financial Formatter</h3>
+      <p class="muted">Convert raw amounts into clean millions notation.</p>
+      <input type="number" id="rawInput" class="input" placeholder="e.g. 15000000">
+      <div id="outputResult" class="result"></div>
+    </div>
+  </div>
+</section>
 
----
-
-## Interactive Client-Side Simulation
-
- lightweight client-side calculation utility:
-
-<div id="calc-widget" style="padding: 20px; background: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; margin: 20px 0;">
-  <h4>Quick LKR Financial Formatter</h4>
-  <p>Convert raw financial inputs into clean millions notation:</p>
-  <input type="number" id="rawInput" placeholder="Enter amount in LKR (e.g. 15000000)" style="padding: 8px; width: 100%; max-width: 300px; margin-bottom: 10px;" />
-  <div id="outputResult" style="font-weight: 600; color: #0366d6;"></div>
 </div>
 
 <script>
-  document.getElementById('rawInput').addEventListener('input', function(e) {
-    const val = parseFloat(e.target.value);
-    if (!isNaN(val)) {
-      const inMillions = (val / 1000000).toFixed(2);
-      document.getElementById('outputResult').innerText = "Formatted: LKR " + inMillions + " M";
-    } else {
-      document.getElementById('outputResult').innerText = "";
-    }
+  document.getElementById('rawInput').addEventListener('input', function (e) {
+    var val = parseFloat(e.target.value);
+    var out = document.getElementById('outputResult');
+    out.innerText = isNaN(val) ? "" : "LKR " + (val / 1000000).toFixed(2) + " M";
   });
 </script>

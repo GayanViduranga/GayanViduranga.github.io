@@ -364,3 +364,292 @@ footer {
     margin-left: 12px;
   }
 }
+
+
+/* ==========================================================
+   13. PORTFOLIO PAGE
+   ========================================================== */
+
+.muted {
+  color: var(--muted);
+}
+
+/* Responsive 16:9 box for the Power BI iframe */
+.embed-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-top: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Text input that follows the theme */
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.result {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent2);
+}
+
+
+/* ==========================================================
+   14. RESUME (A4 CV, printable)
+   ========================================================== */
+
+/* ---------- Page wrapper and print button bar ---------- */
+.resume-wrap {
+  padding: 30px 12px 60px;
+}
+
+.resume-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+
+/* ---------- Easy settings: change these two numbers ---------- */
+.cv {
+  --side-w: 80mm;      /* width of the dark blue sidebar */
+  --side-left: 18mm;   /* sidebar LEFT margin (original was 8mm) */
+}
+
+
+/* ---------- The A4 sheet: 210mm x 297mm ---------- */
+.cv {
+  display: grid;
+  grid-template-columns: var(--side-w) 1fr;   /* sidebar | main */
+  width: 210mm;
+  height: 297mm;                /* exactly one A4 page */
+  margin: 0 auto;
+  overflow: hidden;             /* anything too long is clipped, so you notice it */
+  color: #1f2937;
+  font-size: 10pt;
+  line-height: 1.5;
+  /* dark blue strip on the left, white on the right */
+  background: linear-gradient(to right, #0d2250 0, #0d2250 var(--side-w), #ffffff var(--side-w));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Gap between sheet 1 and sheet 2 on screen */
+.cv + .cv {
+  margin-top: 12mm;
+}
+
+
+/* ---------- Main column (right) ---------- */
+.cv-main {
+  padding: 14mm 14mm 12mm 12mm;   /* top right bottom left */
+}
+
+.cv-block {
+  padding: 0;
+  margin-bottom: 7mm;
+}
+
+.cv-block h2 {
+  margin: 0 0 3mm;
+  padding-bottom: 1.5mm;
+  font-size: 12pt;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #12306b;
+  border-bottom: 2px solid #12306b;
+}
+
+.cv-block p {
+  margin: 0;
+}
+
+.job {
+  margin-bottom: 4mm;
+  break-inside: avoid;
+}
+
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.job-head .date {
+  font-size: 9pt;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.company {
+  margin-bottom: 1mm;
+  font-size: 9.5pt;
+  font-style: italic;
+  color: #12306b;
+}
+
+.cv-main ul {
+  margin: 1mm 0 0;
+  padding-left: 5mm;
+}
+
+.refs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+  font-size: 9.5pt;
+}
+
+
+/* ---------- Dark blue sidebar (left) ---------- */
+.cv-side {
+  padding: 14mm 8mm 12mm var(--side-left);   /* top right bottom left */
+  color: #ffffff;
+  background: transparent;                   /* colour comes from the .cv gradient */
+}
+
+.cv-photo {
+  display: block;
+  width: 42mm;
+  height: 42mm;
+  margin: 0 auto 5mm;
+  object-fit: cover;
+  object-position: 50% 0%;                   /* shows more headroom */
+  border-radius: 50%;
+  border: 1.2mm solid #ffffff;
+}
+
+.cv-side h1 {
+  margin: 0;
+  font-size: 15pt;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.cv-role {
+  margin: 1.5mm 0 6mm;
+  font-size: 9.5pt;
+  text-align: center;
+  color: #9fc1ff;
+}
+
+.cv-side h3 {
+  margin: 6mm 0 2mm;
+  padding-bottom: 1mm;
+  font-size: 10.5pt;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.cv-side ul.plain {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 9pt;
+  word-break: break-word;
+}
+
+.cv-side ul.plain li {
+  margin-bottom: 1.5mm;
+}
+
+.chips span {
+  display: inline-block;
+  margin: 0 1.5mm 1.5mm 0;
+  padding: 0.8mm 2.5mm;
+  font-size: 8.5pt;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+
+/* ---------- Small screens (phones): stack the columns ---------- */
+@media (max-width: 800px) {
+  .cv {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    background: #ffffff;
+  }
+
+  .cv-side {
+    padding: 10mm 8mm;
+    background: #0d2250;
+  }
+
+  .refs {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Print / PDF: A4 with no website parts ---------- */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+  }
+
+  /* hide menu, footer and the print button */
+  .nav, footer, .no-print {
+    display: none !important;
+  }
+
+  .resume-wrap {
+    padding: 0;
+  }
+
+  .cv {
+    width: 210mm;
+    height: 296.5mm;              /* tiny safety gap avoids blank pages */
+    margin: 0;
+    box-shadow: none;
+    grid-template-columns: var(--side-w) 1fr;
+    break-after: page;            /* each sheet becomes one PDF page */
+    page-break-after: always;
+  }
+
+  .cv:last-of-type {
+    break-after: auto;            /* no empty page at the end */
+    page-break-after: auto;
+  }
+
+  .cv + .cv {
+    margin-top: 0;
+  }
+}
